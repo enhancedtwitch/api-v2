@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import channelRoute from "./routes/channel.routes";
 import emoteRoute from "./routes/emotes.routes";
@@ -6,6 +7,11 @@ const app = express();
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(cors({
+    origin: (origin, callback) => {
+        callback(null, ["https://twitch.tv", "https://www.twitch.tv", "https://enhancedtwitch.com", "https://www.enhancedtwitch.com", "https://static.enhancedtwitch.com"]);
+    }
+}))
 
 app.use("/v2/channel", channelRoute);
 app.use("/v2/emotes", emoteRoute);
