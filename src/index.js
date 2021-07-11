@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(cors({
     origin: (origin, callback) => {
-        callback(null, ["https://twitch.tv", "https://www.twitch.tv", "https://enhancedtwitch.com", "https://www.enhancedtwitch.com", "https://static.enhancedtwitch.com"]);
+        callback(null, ["https://twitch.tv", "https://www.twitch.tv", "http://enhancedtwitch.com", "https://enhancedtwitch.com", "http://www.enhancedtwitch.com", "https://www.enhancedtwitch.com", "http://static.enhancedtwitch.com", "https://static.enhancedtwitch.com"]);
     }
 }))
 
